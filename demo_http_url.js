@@ -1,7 +1,6 @@
 var http = require('http');
-var dt = require('./FirstModule');
-
 http.createServer(function (req, res) {
-  res.write(dt.myDateTime());
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write(req.url);
   res.end();
 }).listen(8080); 
